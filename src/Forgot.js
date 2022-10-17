@@ -8,13 +8,13 @@ import { env } from './config';
 function Forgot() {
     let formik = useFormik({
         initialValues: {
-            Email: ""
+            email: ""
         },
         validate: (value) => {
             let errors = {}
             //Password;
-            if (value.Email === "") {
-                errors.Email = "border border-info"
+            if (value.email === "") {
+                errors.email = "border border-info"
             }
             return errors
         },
@@ -39,8 +39,8 @@ function Forgot() {
                         <form className='mt-5' onSubmit={formik.handleSubmit}>
                             {/* <!-- Email input --> */}
                             <div className="form-outline mb-4">
-                                <input type="email" id="registerEmail" className="form-control" value={formik.values.Email} onChange={formik.handleChange} name="Email" required />
-                                <label className="form-label " for="registerEmail">Enter Register Email ID</label>
+                                <input type="email" id="registeremail" className="form-control" value={formik.values.email} onChange={formik.handleChange} name="email" required />
+                                <label className="form-label " for="registeremail">Enter Register Email ID</label>
                             </div>
                             {/* <!-- Submit button --> */}
                             <button type="submit" className="btn btn-danger btn-sm btn-block mb-3">Send Reset Link</button>
