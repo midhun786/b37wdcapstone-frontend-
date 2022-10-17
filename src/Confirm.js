@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { env } from './config';
 
-
 function Confirm() {
     const test = useParams()
     let formik = useFormik({
@@ -14,8 +13,8 @@ function Confirm() {
         },
         validate: (value) => {
             let errors = {}
-            //password;
-            if (value.password.length ==="") {
+            //Password;
+            if (value.password === "") {
                 errors.password = "border border-info"
             }
             return errors
@@ -39,20 +38,20 @@ function Confirm() {
                         <form className='mt-5' onSubmit={formik.handleSubmit}>
 
 
-                            {/* <!-- email input --> */}
+                            {/* <!-- Email input --> */}
                             <div className="form-outline mb-4">
-                                <input type="password" id="registeremail" className={`form-control  ${formik.errors.password}`} value={formik.values.password} onChange={formik.handleChange} name="password" />
-                                <label className="form-label" for="registeremail">New Password</label>
+                                <input type={"password"} id="registerEmail" className={`form-control  ${formik.errors.password}`} value={formik.values.password} onChange={formik.handleChange} name="password" />
+                                <label className="form-label " for="registerEmail">New Password</label>
                             </div>
 
                             {/* <!-- Conform --> */}
                             {/* <div className="form-outline mb-4">
                                 <input type="password"  className="form-control bg-transparent text-white" />
-                                <label className="form-label text-white" for="registeremail">Conform your New password</label>
+                                <label className="form-label text-white" for="registerEmail">Conform your New Password</label>
                             </div> */}
 
                             {/* <!-- Submit button --> */}
-                            <button type="submit" className="btn btn-danger btn-sm btn-block mb-3" disabled={!formik.isValid}>Click to Update Password</button>
+                            <button type={"submit"} className="btn btn-danger btn-sm btn-block mb-3" disabled={!formik.isValid}>Click to Update password</button>
                         </form>
 
                         {/* <!-- Pills content --> */}

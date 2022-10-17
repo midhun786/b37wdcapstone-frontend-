@@ -7,6 +7,7 @@ import Register from './Register';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Forgot from './Forgot';
+import Confirm from './Confirm';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Route path="/" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/forgotpassword" element={<Forgot/>}/>
-      
+      <Route path='/Reset-Password/:id/:token' element={<Confirm/>}/>
 
     </Routes>
     </BrowserRouter>
