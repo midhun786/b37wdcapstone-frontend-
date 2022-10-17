@@ -10,14 +10,14 @@ function Forgot() {
         initialValues: {
             email: ""
         },
-        validate: (values) => {
-            let errors = {}
-            //Password;
-            if (values.email === "") {
-                errors.email = "border border-info"
-            }
-            return errors
-        },
+        // validate: (values) => {
+        //     let errors = {}
+        //     //Password;
+        //     if (values.email === "") {
+        //         errors.email = "border border-info"
+        //     }
+        //     return errors
+        // },
         onSubmit: async (values) => {
             try {
                  let status = await axios.post(`${env.api}/Reset`, values);
