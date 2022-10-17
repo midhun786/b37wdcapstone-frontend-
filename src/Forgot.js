@@ -10,14 +10,14 @@ function Forgot() {
         initialValues: {
             email: ""
         },
-        // validate: (value) => {
-        //     let errors = {}
-        //     //Password;
-        //     if (value.email === "") {
-        //         errors.email = "border border-info"
-        //     }
-        //     return errors
-        // },
+        validate: (value) => {
+            let errors = {}
+            //Password;
+            if (value.email === "") {
+                errors.email = "border border-info"
+            }
+            return errors
+        },
         onSubmit: async (values) => {
             try {
                  let status = await axios.post(`${env.api}/Reset`, values);
@@ -39,11 +39,11 @@ function Forgot() {
                         <form className='mt-5' onSubmit={formik.handleSubmit}>
                             {/* <!-- Email input --> */}
                             <div className="form-outline mb-4">
-                                <input type="email" id="registeremail" className="form-control" value={formik.values.email} onChange={formik.handleChange} name="email" required />
+                                <input type={"email"} id="registeremail" className="form-control" value={formik.values.email} onChange={formik.handleChange} name="email" required />
                                 <label className="form-label " for="registeremail">Enter Register Email ID</label>
                             </div>
                             {/* <!-- Submit button --> */}
-                            <button type="submit" className="btn btn-danger btn-sm btn-block mb-3">Send Reset Link</button>
+                            <button type={"submit"} className="btn btn-danger btn-sm btn-block mb-3">Send Reset Link</button>
                         </form>
                     </span>
                 </span>
