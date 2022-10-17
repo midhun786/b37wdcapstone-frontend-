@@ -22,7 +22,7 @@ function Confirm() {
         },
         onSubmit: async (User) => {
             try {
-                await axios.post(`${env.api}/Reset-password/${test.id}/${test.token}`, User);
+                await axios.post(`${env.api}/Reset-Password/${test.id}/${test.token}`, User);
                 Swal.fire({ title: 'Welcome', text: 'Updated Done', icon: 'success', confirmButtonText: 'Login'});
             } catch (error) {
                 Swal.fire({ title: `${error.response.data.Message}`, icon: 'warning', confirmButtonText: 'Try Again' });
