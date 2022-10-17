@@ -1,55 +1,68 @@
-import axios from 'axios';
-import { useFormik } from 'formik'
-import React from 'react'
-import Swal from 'sweetalert2';
-import { env } from './config';
-
+import React from "react";
+import { env } from "./config";
+import { useFormik } from "formik";
+import axios from "axios";
 
 function Forgot() {
-    let formik = useFormik({
-        initialValues: {
-            email: ""
-        },
-        // validate: (values) => {
-        //     let errors = {}
-        //     //Password;
-        //     if (values.email === "") {
-        //         errors.email = "border border-info"
-        //     }
-        //     return errors
-        // },
-        onSubmit: async (values) => {
-            try {
-                 let status = await axios.post(`${env.api}/Reset`, values);
-                console.log(status);
-                Swal.fire({ title: 'Email Send', text: 'Please Check Your Email', icon: 'success', confirmButtonText: 'Login' });
-            } catch (error) {
-                Swal.fire({ title: "User Not Found", icon: 'warning', confirmButtonText: 'Try Again' });
-                console.log(error);
-            }
-        }
-    });
-    return (
-        <>
-            <span className='container'>
-                <span className='row d-flex align-content-center justify-content-center mt-5'>
-                    <span className='col-lg-5 col-md-7 col-sm-9 border rounded rounded check mt-5'>
+  let formik = useFormik({
+    initialValues: {
+      email: "",
+    },
+    onSubmit: async (values) => {
+      let user = await axios.post(`${env.api}/Reset`, values);
+      console.log(user);
+      alert(user.data.message);
+    },
+  });
+  return (
+    <div className="container">
+        <span className="row d-flex align-content-center justify-content-center ">
+          <span className="col-lg-4 col-md-6 col-sm-9 pt-5 ">
+            {/* <div className="row justify-content-center">
+        <div className="col-xl-10 col-lg-12 col-md-9"> */}
+            <div className="card o-hidden border-0 shadow-lg  mt-5 transp pt-2 d-flex align-content-center">
+              <div className="card-body p-2">
+                {/* <!-- Nested Row within Card Body --> */}
+              <div className="row">
+                  <div className="col-lg-9 mx-auto">
+                    <div className="p-0">
 
-                        {/* -------------------Forget form-------------------- */}
-                        <form className='mt-5' onSubmit={formik.handleSubmit}>
-                            {/* <!-- Email input --> */}
-                            <div className="form-outline mb-4">
-                                <input type={"email"} id="registeremail" className="form-control" value={formik.values.email} onChange={formik.handleChange} name="email" required />
-                                <label className="form-label " for="registeremail">Enter Register Email ID</label>
-                            </div>
-                            {/* <!-- Submit button --> */}
-                            <button type={"submit"} className="btn btn-danger btn-sm btn-block mb-3">Send Reset Link</button>
-                        </form>
-                    </span>
-                </span>
-            </span>
-        </>
-    )
+                      
+                      <div className=" card-header text-center">
+                        <h1 className="h4  myname">
+                          Welcome To Email verification Page!
+                        </h1>
+                      </div>
+
+                    <form onSubmit={formik.handleSubmit}>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">
+                          Enter mail address to confirm
+                        </label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          name="email"
+                          onChange={formik.handleChange}
+                          value={formik.values.email}
+                        />
+                      </div>
+
+                      <button type="submit" class="btn btn-outline-primary myname">
+                        Submit
+                      </button>
+                    </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+          </span>
+        </span>
+      </div>
+  );
 }
 
-export default Forgot
+export default Forgot;
