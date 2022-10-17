@@ -38,8 +38,8 @@ function Forgot() {
                         <form className='mt-5' onSubmit={formik.handleSubmit}>
                             {/* <!-- email input --> */}
                             <div className="form-outline mb-4">
-                                <input type="email" id="registeremail" className="form-control bg-transparent text-white" value={formik.values.email} onChange={formik.handleChange} name="email" required />
-                                <label className="form-label text-white" for="registeremail">Enter Register email ID</label>
+                                <input type="email" id="registeremail" className="form-control  " value={formik.values.email} onChange={formik.handleChange} name="email" required />
+                                <label className="form-label " for="registeremail">Enter Register email ID</label>
                             </div>
                             {/* <!-- Submit button --> */}
                             <button type="submit" className="btn btn-danger btn-sm btn-block mb-3">Send Reset Link</button>
