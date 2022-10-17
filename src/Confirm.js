@@ -41,8 +41,8 @@ function Confirm() {
 
                             {/* <!-- email input --> */}
                             <div className="form-outline mb-4">
-                                <input type="password" id="registeremail" className={`form-control bg-transparent text-white ${formik.errors.password}`} value={formik.values.password} onChange={formik.handleChange} name="password" />
-                                <label className="form-label text-white" for="registeremail">New Password</label>
+                                <input type="password" id="registeremail" className={`form-control  ${formik.errors.password}`} value={formik.values.password} onChange={formik.handleChange} name="password" />
+                                <label className="form-label" for="registeremail">New Password</label>
                             </div>
 
                             {/* <!-- Conform --> */}
