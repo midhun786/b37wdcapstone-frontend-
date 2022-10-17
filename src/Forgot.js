@@ -10,10 +10,10 @@ function Forgot() {
         initialValues: {
             email: ""
         },
-        validate: (value) => {
+        validate: (values) => {
             let errors = {}
             //Password;
-            if (value.email === "") {
+            if (values.email === "") {
                 errors.email = "border border-info"
             }
             return errors
