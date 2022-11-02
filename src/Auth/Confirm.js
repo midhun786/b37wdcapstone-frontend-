@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { env } from './config';
+import { env } from '../config';
 
 function Confirm() {
     const test = useParams()
@@ -20,12 +20,12 @@ function Confirm() {
             return errors
         },
         onSubmit: async (User) => {
-            try {
-                await axios.post(`${env.api}/Reset-Password/${test.id}/${test.token}`, User);
-                Swal.fire({ title: 'Welcome', text: 'Updated Done', icon: 'success', confirmButtonText: 'Login'});
-            } catch (error) {
-                Swal.fire({ title: `${error.response.data.Message}`, icon: 'warning', confirmButtonText: 'Try Again' });
-            }
+        //     try {
+        //         await axios.post(`${env.api}/Reset-Password/${test.id}/${test.token}`, User);
+        //         Swal.fire({ title: 'Welcome', text: 'Updated Done', icon: 'success', confirmButtonText: 'Login'});
+        //     } catch (error) {
+        //         Swal.fire({ title: `${error.response.data.Message}`, icon: 'warning', confirmButtonText: 'Try Again' });
+        //     }
         }
     });
     return (
@@ -51,7 +51,7 @@ function Confirm() {
                             </div> */}
 
                             {/* <!-- Submit button --> */}
-                            <button type={"submit"} className="btn btn-danger btn-sm btn-block mb-3" disabled={!formik.isValid}>Click to Update password</button>
+                            <button type={"submit"} className="btn btn-danger btn-sm btn-block mb-3" style={{backgroundColor:"rgb(255, 119, 77)"}} disabled={!formik.isValid}>Click to Update password</button>
                         </form>
 
                         {/* <!-- Pills content --> */}

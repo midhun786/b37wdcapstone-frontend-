@@ -3,7 +3,7 @@ import React from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import { Link} from "react-router-dom";
-import { env } from "./config";
+import { env } from "../config";
 
 function Register() {
 //   let navigate = useNavigate();
@@ -42,13 +42,13 @@ function Register() {
     return errors;
     }, 
     onSubmit: async (values) => {
-      try {
-        await axios.post(`${env.api}/register`, values);
-        alert("successfully registered")
-      } catch (error) {
-        alert(error.response.messsage)
-        console.log(error);
-      }
+      // try {
+      //   await axios.post(`${env.api}/register`, values);
+      //   alert("successfully registered")
+      // } catch (error) {
+      //   alert(error.response.messsage)
+      //   console.log(error);
+      // }
     },
   });
   return (
@@ -125,13 +125,13 @@ function Register() {
 
                       <button
                         type="submit"
-                        className="btn btn-danger btn-user fw-bold btn-block myname"
+                        className="btn btn-danger btn-user fw-bold btn-block myname" style={{backgroundColor:"rgb(255, 119, 77)"}}
                       >
                         REGISTER
                       </button>
                     </form>
                     <div className='text-center fw-bold p-3 mt-2'>
-                    <p>Already a member? <Link to={"/"}>Sign In</Link>
+                    <p>Already a member? <Link to={"/"} style={{color:"rgb(255, 119, 77)"}}>Sign In</Link>
                         </p>
                     
                     </div>

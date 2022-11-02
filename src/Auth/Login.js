@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React from 'react'
+import Logo from "../Home/lo.jpg"
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from "formik";
-import { env } from './config';
+// import { env } ../config';
 
 function Login() {
 
@@ -12,7 +13,7 @@ function Login() {
   //   navigate("/forgotpassword")
   // }
   let handleLogin = () => {
-    navigate("/")
+    navigate("/home")
   }
    let formik = useFormik({
      initialValues:{
@@ -31,19 +32,19 @@ function Login() {
       return errors
   },
      onSubmit:async(values)=>{
-      try {
-      let user= await axios.post(`${env.api}/login`,values)
-      // console.log(user.data.foo)
-      if(user.data.foo){
-        alert("login successfully")
-      }else{
-        alert("password/email is wrong")
-      }
+      // try {
+      // let user= await axios.post(`${env.api}/login`,values)
+      // // console.log(user.data.foo)
+      // if(user.data.foo){
+      //   alert("login successfully")
+      // }else{
+      //   alert("password/email is wrong")
+      //  }
        
-      } catch (error) {
-        console.log("errors")
+      // } catch (error) {
+      //   console.log("errors")
        
-      }
+      // }
       
      }
 
@@ -58,12 +59,12 @@ function Login() {
         <div class="container">
           <div class="row gx-lg-5 align-items-center">
             <div class="col-lg-6 mb-5 mb-lg-0">
-              <h1 class="my-5 display-3 fw-bold ls-tight">
-                Book
-                <span class="text-danger"><img src="https://play-lh.googleusercontent.com/KSXq3Idt1WbHnaHcsC4p5KxaRE0KuuB-GNRJP3XRS2omj6DY8ohkbMlIbK53Sp6TlxYm" style={{ width: "50px", height: "50px" }}></img> Show</span>
+              <h1 class="my-5 display-3 fw-bold ls-tight"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk2Qj9qFKYDdfpmkD2DEBpk641QSI-tr7CLrCZZ01xSRNO4p56rkjXiFTr5ZzEdX_4i2Q&usqp=CAU" style={{ width: "70px", height: "70px" }}></img>
+               Shopp.
+                <span style={{color:"rgb(255, 119, 77)"}} >my</span>
               </h1>
               <p style={{ color: " hsl(217, 10%, 50.8%)" }}>
-                BookMyShow started out in 1999 as a software re-seller for movie theaters and converted into a platform catering to cloud-based ticket booking of events, movies, sports, and plays. BookMyShow was known by the name of its parent company, Bigtree Entertainment Pvt. Ltd., at the time of its inception.
+              Shopp.my was founded in the garage of Bezos' rented home in Bellevue, Washington. Bezos' parents invested almost $250,000 in the start-up. On July 16, 1995, Shopp.my opened as an online bookseller, selling the world's largest collection of books to anyone with World Wide Web access.
               </p>
             </div>
 
@@ -102,28 +103,28 @@ function Login() {
                       </label>
                     </div>
                     {/* <!-- Submit button --> */}
-                    <button onClick={()=>{handleLogin()}}  type={"submit"} class="btn btn-danger btn-block mb-4">
+                    <button onClick={()=>{handleLogin()}}  type={"submit"} class="btn btn-danger btn-block mb-4" style={{backgroundColor:"rgb(255, 119, 77)"}}>
                       Login
                     </button>
 
                     {/* <!-- Register buttons --> */}
                     <div class="text-center">
-                      <div> <Link to={"./forgotpassword"} style={{ color: "#dc3545" }}>forgotpassword</Link></div> &nbsp;
-                      <p>or sign up with:<Link to={"./register"} style={{ color: "#dc3545" }}>Register</Link></p>
+                      <div> <Link to={"./forgotpassword"} style={{ color: "rgb(255, 119, 77)" }}>forgotpassword</Link></div> &nbsp;
+                      <p>or sign up with:<Link to={"./register"} style={{ color: "rgb(255, 119, 77)" }}>Register</Link></p>
 
-                      <button type="button" style={{ color: "#dd4b39" }} class="btn btn-link btn-floating mx-1">
+                      <button type="button" style={{ color: "rgb(255, 119, 77)" }} class="btn btn-link btn-floating mx-1">
                         <i class="fab fa-facebook-f"></i>
                       </button>
 
-                      <button type="button" style={{ color: "#dd4b39" }} class="btn btn-link btn-floating mx-1">
+                      <button type="button" style={{ color: "rgb(255, 119, 77)" }} class="btn btn-link btn-floating mx-1">
                         <i class="fab fa-google"></i>
                       </button>
 
-                      <button type="button" style={{ color: "#dd4b39" }} class="btn btn-link btn-floating mx-1">
+                      <button type="button" style={{ color: "rgb(255, 119, 77)" }} class="btn btn-link btn-floating mx-1">
                         <i class="fab fa-twitter"></i>
                       </button>
 
-                      <button type="button" style={{ color: "#dd4b39" }} class="btn btn-link btn-floating mx-1">
+                      <button type="button" style={{ color: "rgb(255, 119, 77)" }} class="btn btn-link btn-floating mx-1">
                         <i class="fab fa-github"></i>
                       </button>
                     </div>

@@ -1,3 +1,231 @@
 .input-error{
   border: 1px solid red,
 }
+
+/* <-----------------------start-banner.css---------------------> */
+.banner__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 280px;
+  /* overflow: hidden; */
+}
+.slide__show {
+  width: 62.5%;
+  max-height: 280px;
+  margin-right: 2rem;
+  text-align: center;
+}
+.slide__item img {
+  background-size: cover;
+  width: 100%;
+  height: 280px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+}
+.banner__content {
+  width: 35%;
+  max-height: 280px;
+}
+.banner__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+@media screen and (min-width: 279px) and (max-width: 1024px) {
+
+  .banner__content {
+      display: none;
+  }
+  .slide__show {
+      width: 100%;
+  }
+  .slide__image {
+      background-size: cover;
+      width: 100%;
+      max-height: 280px;
+      background-position: center;
+      background-repeat: no-repeat;
+      object-fit: cover;
+  }
+}
+@media screen and (max-width: 695px) {
+  .banner__container {
+      width: 100%;
+      max-height: 230px;
+  }
+  .slide__show {
+      width: 62.5%;
+      width: 100%;
+      max-height: 230px;
+  }
+  .slide__item img {
+      width: 100%;
+      height: 230px;
+  }
+  .banner__content {
+      width: 0;
+  }
+}
+/* <-----------------------end-banner.css---------------------> */
+
+
+/* <-----------------------advertise.css start---------------------> */
+.ads__image--container {
+  width: 100%;
+  max-height: 500px;
+  margin: 2rem 0 2rem;
+  background-size: cover;
+}
+.ads__image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+}
+/* <-----------------------advertise.css end---------------------> */
+/* <----------------------footer.css start--------------------------> */
+footer {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 3rem 3rem;
+
+}
+/* .follow__container, .infor__container {
+  padding: 3rem 2rem;
+} */
+.follow__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+}
+.infor__container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.follow__list, .infor__title, .category__list--container {
+  display: flex;
+  justify-content: space-around;
+  display: flex;
+}
+.infor__title {
+  flex-wrap: wrap;
+}
+.follow__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color:#cc2b5e;
+  color: white;
+  text-align: center;
+  align-items: center;
+  margin: 10px 10px;
+  font-size: 3rem;
+  transition: all ease-in 0.3s;
+}
+.follow__icon i {
+  margin-top: 1rem;
+}
+.follow__icon:hover {
+  background-color:rgb(20, 102, 103);
+}
+
+.category__list--container ul {
+  display: flex;
+  flex-direction: column;
+}
+.category__list--container ul li a {
+  color: black;
+}
+.category__list--container ul li a:hover, .infor__title h3:hover {
+  color:rgb(24, 179, 179);
+}
+.payment__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.payment__list li {
+  margin: 0.5rem 0.8rem;
+}
+.payment__list li img {
+  width: 80px;
+  height: 50px;
+}
+.email__container, .email__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.email__content button {
+  margin-left: 2rem;
+  padding: 6px 10px;
+  background: #1c8561;
+  color: currentColor;
+  color: white;
+}
+.email__image {
+  max-width: 100px;
+  max-height: 100px;
+}
+.email__input {
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid rgb(233, 230, 230);
+  max-width: 300px;
+  flex: auto;
+  max-width: 400px;
+  margin: 1rem 0 1rem;
+}
+
+@media screen and (max-width: 320px) {
+  .category__list--container {
+      flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 450px) {
+  .follow__list {
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+}
+
+@media screen and (max-width: 725px) {
+  .infor__container {
+      margin-top: 2rem;
+  }
+}
+/* <----------------------footer.css end--------------------------> */
+
+/* <------------------------cartItems css---------------------------> */
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #ffffff;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgb(236, 234, 238), rgb(221, 229, 244));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(189, 180, 199), rgb(192, 193, 196))
+  }
