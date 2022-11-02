@@ -32,7 +32,7 @@ function Card({item,handleToCart,removeFromCart}) {
                           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center">
                                 <button class="btn btn-outline-dark mt-auto" onClick={()=>handleToCart(item)} >Add to cart</button></div>
-                                <button class="btn btn-outline-dark mt-auto " onClick={()=>removeFromCart(item)} >remove from cart</button></div>
+                                <button class="btn btn-outline-dark mt-auto " onClick={()=>removeFromCart(item)} >remove cart</button></div>
                           </div>
                         </div>
                    

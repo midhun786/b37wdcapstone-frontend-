@@ -22,13 +22,13 @@ export default function Banner() {
             <div className="slide__show">
                 <Slider {...settings}>
                     <div className="slide__item">
-                        <img src={BannerPink} alt=""/>
+                        <img src={"https://shoppeestop.netlify.app/static/media/banner_pink1.bcacd158.jpg"} alt=""/>
                     </div>
                     <div className="slide__item">
-                        <img src={Modal} alt=""/>
+                        <img src={"https://shoppeestop.netlify.app/static/media/moda2.8236f997.jpg"} alt=""/>
                     </div>
                     <div className="slide__item">
-                        <img  src={Bambaska} alt=""/>
+                        <img  src={"https://shoppeestop.netlify.app/static/media/bambaska1.ae6d4791.jpg"} alt=""/>
                     </div>
                 </Slider>
             </div>
