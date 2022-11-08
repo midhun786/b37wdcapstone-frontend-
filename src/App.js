@@ -79,7 +79,11 @@ function App() {
   let LoadData=async()=>{
   try {
       setLoading(true);
-      let req= await axios.get(`${env.api}/home`)
+      let req= await axios.get(`${env.api}/home`,{
+        headers:{
+          authorisation:window.localStorage.getItem("app-token")
+        }
+      })
       setData(req.data)
       setLoading(false)
     } catch (error) {
@@ -117,7 +121,7 @@ function App() {
     console.log(item)
     value.splice(index,1);
     setValues([...cart]);
-    setTotal(()=>total-item.price);
+    setTotal(total-item.price);
   }
 }
   
