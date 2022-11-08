@@ -3,6 +3,7 @@ import React from 'react'
 import Logo from "../Home/lo.jpg"
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from "formik";
+import Swal from 'sweetalert2';
 import { env } from '../config';
 
 
