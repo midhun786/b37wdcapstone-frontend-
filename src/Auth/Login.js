@@ -35,7 +35,7 @@ function Login() {
   },
     onSubmit:async(values)=>{
       try {
-      let user= await axios.post(`${env.api}/`,values)
+      let user= await axios.post(`${env.api}/login`,values)
       let hooker=user.data.hook
       if(user.data.token){
         // user.data.token
