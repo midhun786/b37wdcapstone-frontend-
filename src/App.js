@@ -78,7 +78,11 @@ function App() {
 
   let LoadData=async()=>{
       setLoading(true);
-      let req= await axios.get(`${env.api}/home`)
+      let req= await axios.get(`${env.api}/home`,{
+        headers:{
+          "authorisation":window.localStorage.getItem("app-token")
+        }
+      })
       setData(req.data)
       setLoading(false)
   }
@@ -109,6 +113,7 @@ function App() {
     alert("Are you sure want to remove item")
     setCart(cart-1)
     let index=value.findIndex((obj)=> obj.id==item.id);
+    console.log(item)
     value.splice(index,1);
     setValues([...cart]);
     setTotal(total-item.price);

@@ -36,11 +36,11 @@ function Login() {
      onSubmit:async(values)=>{
       try {
       let user= await axios.post(`${env.api}/`,values)
-      // console.log(user.data.token)
-      if(user.data.token){
-        // alert("login successfully")
-        Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'Go to home'});
+      if(user.status===200){
+        // user.data.token
         navigate("/home")
+        window.localStorage.setItem("app-token",user.data.token)
+        Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'Go to home'});
       }else{
         alert("password/email is wrong")
        }
