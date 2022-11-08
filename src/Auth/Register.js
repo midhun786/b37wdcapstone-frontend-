@@ -1,9 +1,9 @@
 import React from "react";
-
 import { useFormik } from "formik";
 import axios from "axios";
 import { Link} from "react-router-dom";
 import { env } from "../config";
+import Swal from 'sweetalert2';
 
 function Register() {
 //   let navigate = useNavigate();
@@ -44,7 +44,8 @@ function Register() {
     onSubmit: async (values) => {
       try {
         await axios.post(`${env.api}/register`, values);
-        alert("successfully registered")
+        // alert("successfully registered")
+        Swal.fire({ title: 'Welcome', text: 'successfully registered', icon: 'success', confirmButtonText: 'Login'});
       } catch (error) {
         alert(error.response.messsage)
         console.log(error);
