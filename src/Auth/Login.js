@@ -47,8 +47,8 @@ function Login() {
        }
       } catch (error) {
         console.log("errors")
-        Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: ''});
-        alert("user not found")
+        Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: 'please sign up'});
+        // alert("user not found")
       }
     }
 
