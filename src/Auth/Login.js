@@ -37,7 +37,8 @@ function Login() {
       let user= await axios.post(`${env.api}/`,values)
       // console.log(user.data.token)
       if(user.data.token){
-        alert("login successfully")
+        // alert("login successfully")
+        Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'Go to home'});
         navigate("/home")
       }else{
         alert("password/email is wrong")
