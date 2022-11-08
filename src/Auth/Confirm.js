@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { env } from '../config';
 
 function Confirm() {
-    const test = useParams()
+    const params = useParams()
     let formik = useFormik({
         initialValues: {
             password: ""
@@ -20,12 +20,12 @@ function Confirm() {
             return errors
         },
         onSubmit: async (User) => {
-        //     try {
-        //         await axios.post(`${env.api}/Reset-Password/${test.id}/${test.token}`, User);
-        //         Swal.fire({ title: 'Welcome', text: 'Updated Done', icon: 'success', confirmButtonText: 'Login'});
-        //     } catch (error) {
-        //         Swal.fire({ title: `${error.response.data.Message}`, icon: 'warning', confirmButtonText: 'Try Again' });
-        //     }
+            try {
+                await axios.post(`${env.api}/Reset-Password/${params.id}/${params.token}`, User);
+                Swal.fire({ title: 'Welcome', text: 'Updated Done', icon: 'success', confirmButtonText: 'Login'});
+            } catch (error) {
+                Swal.fire({ title: `${error.response.data.Message}`, icon: 'warning', confirmButtonText: 'Try Again' });
+            }
         }
     });
     return (

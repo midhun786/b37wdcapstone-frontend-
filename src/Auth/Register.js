@@ -42,13 +42,13 @@ function Register() {
     return errors;
     }, 
     onSubmit: async (values) => {
-      // try {
-      //   await axios.post(`${env.api}/register`, values);
-      //   alert("successfully registered")
-      // } catch (error) {
-      //   alert(error.response.messsage)
-      //   console.log(error);
-      // }
+      try {
+        await axios.post(`${env.api}/register`, values);
+        alert("successfully registered")
+      } catch (error) {
+        alert(error.response.messsage)
+        console.log(error);
+      }
     },
   });
   return (

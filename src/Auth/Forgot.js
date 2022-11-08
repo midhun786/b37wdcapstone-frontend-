@@ -2,7 +2,8 @@ import axios from 'axios';
 import { useFormik } from 'formik'
 import React from 'react'
 import Swal from 'sweetalert2';
-// import { env } from '../config';
+import { env } from '../config';
+
 
 function Forgot() {
     let formik = useFormik({
@@ -18,14 +19,14 @@ function Forgot() {
             return errors
         },
         onSubmit: async (User) => {
-            // try {
-            //     let status = await axios.post(`${env.api}/Reset`, User);
-            //     console.log(status);
-            //     Swal.fire({ title: 'email Send', text: 'Please Check Your email', icon: 'success', confirmButtonText: 'Login' });
-            // } catch (error) {
-            //     Swal.fire({ title: "User Not Found", icon: 'warning', confirmButtonText: 'Try Again' });
-            //     console.log(error);
-            // }
+            try {
+                let status = await axios.post(`${env.api}/Reset`, User);
+                console.log(status);
+                Swal.fire({ title: 'email Send', text: 'Please Check Your email', icon: 'success', confirmButtonText: 'Login' });
+            } catch (error) {
+                Swal.fire({ title: "User Not Found", icon: 'warning', confirmButtonText: 'Try Again' });
+                console.log(error);
+            }
         }
     });
     return (

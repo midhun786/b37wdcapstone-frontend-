@@ -1,7 +1,5 @@
 // import sale from "./images/b1.jpg"
 
-import Advertise2 from "./ads2";
-
 export default function Advertise() {
     return (
         <>
