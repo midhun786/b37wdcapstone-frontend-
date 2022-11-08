@@ -36,9 +36,7 @@ function Login() {
      onSubmit:async(values)=>{
       try {
       let user= await axios.post(`${env.api}/`,values)
-      if(!user){
-         alert("user not found")
-      }if(user.status===200){
+      if(user.status===200){
         // user.data.token
         navigate("/home")
         window.localStorage.setItem("app-token",user.data.token)
@@ -49,6 +47,7 @@ function Login() {
        }
       } catch (error) {
         console.log("errors")
+        alert("user not found")
        
       }
       
