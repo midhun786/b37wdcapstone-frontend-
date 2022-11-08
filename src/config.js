@@ -1,3 +1,3 @@
 export const env={
-     api:"https://b37wdcapstone.herokuapp.com"
+     api:"http://localhost:4000"
 }
