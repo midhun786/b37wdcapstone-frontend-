@@ -47,11 +47,10 @@ function Login() {
        }
       } catch (error) {
         console.log("errors")
+        Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: ''});
         alert("user not found")
-       
       }
-      
-     }
+    }
 
    })
 
