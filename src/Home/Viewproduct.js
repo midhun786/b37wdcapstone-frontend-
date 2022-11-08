@@ -33,7 +33,7 @@ function Viewproduct({cart,handleToCart,isloading}) {
      try {
         let user= await axios.get(`${env.api}/viewproduct/${params.id}`,{
           headers:{
-            "authorisation":window.localStorage.getItem("app-token")
+            authorisation:window.localStorage.getItem("app-token")
           }
         })
         setUserData(user.data)

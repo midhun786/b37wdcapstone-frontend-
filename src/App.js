@@ -80,7 +80,7 @@ function App() {
       setLoading(true);
       let req= await axios.get(`${env.api}/home`,{
         headers:{
-          "authorisation":window.localStorage.getItem("app-token")
+          authorisation:window.localStorage.getItem("app-token")
         }
       })
       setData(req.data)
