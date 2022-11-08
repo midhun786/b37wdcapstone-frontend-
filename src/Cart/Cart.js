@@ -16,6 +16,7 @@ function Cart({cart,value,total,handleToRemove,handleIncrement,handleDecrement,i
         {
           value.map((ele)=>{
             return <CartLoop 
+            key={ele._id}
             ele={ele}
             total={total} 
             initialValues={initialValues} 

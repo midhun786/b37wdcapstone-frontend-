@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from "../Home/lo.jpg"
-function Navbar({cart}) {
+function Navbar({cart,username}) {
   return (
     <>
     <div className="container">
@@ -25,10 +25,13 @@ function Navbar({cart}) {
               <Link to={"/history"} className="nav-link" >history</Link>
             </li>
             <li className="nav-item mx-3">
-              <Link to={"/"} className="nav-link" >login</Link>
+              <Link to={"/"} className="nav-link" >logout</Link>
             </li>
             <li className="nav-item mx-3">
               <Link to={"/register"} className="nav-link">register</Link>
+            </li>
+            <li className="nav-item mx-3">
+              <Link to="##" className="nav-link"><span><u><strong><i className="fa-solid fa-user me-2"></i>{username}</strong></u></span></Link>
             </li>
           </ul>
           <form className="d-flex">

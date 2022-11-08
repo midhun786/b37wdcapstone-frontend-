@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function Card({item,handleToCart}) {
+function Card({item,handleToCart,value}) {
  
   return (
    <>
@@ -32,7 +32,7 @@ function Card({item,handleToCart}) {
                             </div>
                           <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div className="text-center">
-                                <button className="btn btn-outline-dark mt-auto" onClick={()=>handleToCart(item)} >Add to cart</button>
+                                <button disabled={value.some((obj)=>obj._id==item._id)} className="btn btn-outline-dark mt-auto" onClick={()=>handleToCart(item)} >Add to cart</button>
                                 <Link to={`/viewproduct/${item._id}`} state={{item}} className="btn btn-outline-dark mt-auto" style={{backgroundColor:"rgb(255, 119, 77)"}} >view</Link>
                                 </div>
                                </div>

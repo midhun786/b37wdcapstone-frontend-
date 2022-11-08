@@ -7,9 +7,10 @@ import Card from './Card'
 import Navbar from './Navbar'
 import Lottie from 'react-lottie';
 import animationData from "./lottie/93948-wait-loading-animation.json"
+import { useLocation } from 'react-router-dom'
 
 
-function Home({cart,handleToCart,data,isloading}) {
+function Home({cart,handleToCart,data,isloading,value}) {
   const defaultOptions = {
     loop: true,
     autoplay: true, 
@@ -18,6 +19,8 @@ function Home({cart,handleToCart,data,isloading}) {
       preserveAspectRatio: 'xMidYMid slice'
     }
   }
+  const location=useLocation();
+  let username=location.state
   return (
     //navbar
     //Banner
@@ -27,7 +30,7 @@ function Home({cart,handleToCart,data,isloading}) {
     <>
     {/* <--------------------start-Navbar------------------------> */}
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Navbar cart={cart} ></Navbar>
+        <Navbar cart={cart} username={username}></Navbar>
       </nav>
       
       {/* <------------------------start-banner------------------> */}
@@ -47,8 +50,8 @@ function Home({cart,handleToCart,data,isloading}) {
                    isloading?<><Lottie options={defaultOptions}
                    height={400}
                    width={400}
-                   /></>:data.map((item)=>{
-                      return <Card item={item} handleToCart={handleToCart}></Card>
+                   /></>:data.map((item,index)=>{
+                      return <Card key={index} item={item} handleToCart={handleToCart} value={value}></Card>
                     })
                    }
                 </div>

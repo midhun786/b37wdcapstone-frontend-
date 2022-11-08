@@ -36,7 +36,7 @@ return (
                 <p><strong>{ele.title}</strong></p>
                 <p>price:{ele.price}</p>
                 <p>Size: M </p>    
-                <button type="button"  onClick={()=>removeFromCart(ele)} className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                <button type="button" onClick={()=>removeFromCart(ele)} className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
                   title="Remove item">
                   <i className="fas fa-trash"></i>
                 </button>
@@ -49,7 +49,7 @@ return (
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                  <div className="d-flex mb-4" style={{maxWidth: "300px"}}>
                   <button className="btn btn-primary px-3 me-2"
-                    onClick={()=>handleDecrement()}  >
+                    onClick={()=>handleDecrement()}>
                     <i className="fas fa-minus"></i>
                   </button>
 
@@ -58,7 +58,7 @@ return (
                   </div>
 
                   <button className="btn btn-primary px-3 ms-2"
-                   onClick={()=>handleIncrement()} >
+                   onClick={()=>handleIncrement()}>
                     <i className="fas fa-plus"></i>
                   </button>
                 </div>

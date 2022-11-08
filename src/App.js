@@ -113,15 +113,15 @@ function App() {
     setValues([...value,item])
     setTotal(total+item.price)
   }
-  let removeFromCart=(item)=>{
+  let removeFromCart=(ele)=>{
     if(cart>0){
     alert("Are you sure want to remove item")
     setCart(cart-1)
-    let index=value.findIndex((obj)=> obj.id==item.id);
-    console.log(item)
+    let index=value.findIndex((obj)=> obj._id==ele._id);
+    console.log(ele.price)
     value.splice(index,1);
-    setValues([...cart]);
-    setTotal(total-item.price);
+    setValues([...value]);
+    setTotal(total-ele.price);
   }
 }
   
@@ -134,7 +134,8 @@ function App() {
       <Route path="/Reset" element={<Forgot/>}/>
       <Route path='/Reset-Password/:id/:token' element={<Confirm/>}/>
       <Route path="/products" element={<Products cart={cart} isloading={isloading} data={data} handleToCart={addToCart} />}/>
-      <Route path="/cart" element={<Cart value={value} 
+      <Route path="/cart" element={<Cart 
+      value={value} 
       cart={cart}
       total={total} 
       initialValues={initialValues}
@@ -145,7 +146,13 @@ function App() {
       <Route path="/viewproduct/:id" element={<Viewproduct cart={cart} handleToCart={addToCart} isloading={isloading}/>}/>
        <Route path="/history" element={<History cart={cart}/>}/> 
         
-        <Route path="/home" element={<Home cart={cart} value={value} total={total} handleToCart={addToCart} data={data} isloading={isloading}/>}>
+        <Route path="/home" element={<Home 
+        cart={cart} 
+        value={value}
+        total={total}
+        handleToCart={addToCart}
+        data={data} 
+        isloading={isloading}/>}>
            
         </Route>
 
