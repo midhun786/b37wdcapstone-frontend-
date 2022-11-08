@@ -14,9 +14,9 @@ function Login() {
   // let handleforgot = () => {
   //   navigate("/forgotpassword")
   // }
-  // let handleLogin = () => {
-  //   navigate("/home")
-  // }
+  let handleLogin = () => {
+    navigate("/home")
+  }
    let formik = useFormik({
      initialValues:{
        email:"",
@@ -36,15 +36,15 @@ function Login() {
      onSubmit:async(values)=>{
       try {
       let user= await axios.post(`${env.api}/`,values)
-      if(user.status===200){
-        // user.data.token
-        navigate("/home")
-        // window.localStorage.setItem("app-token",user.data.token)
-        Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'welcome to home'});
-      }
-      else{
-        alert("password/email is wrong")
-       }
+      // if(user.status===200){
+      //   // user.data.token
+      //   navigate("/home")
+      //   // window.localStorage.setItem("app-token",user.data.token)
+      //   Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'welcome to home'});
+      // }
+      // else{
+      //   alert("password/email is wrong")
+      //  }
       } catch (error) {
         console.log("errors")
         Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: 'please sign up'});
@@ -107,7 +107,7 @@ function Login() {
                       </label>
                     </div>
                     {/* <!-- Submit button --> */}
-                    <button type="submit" className="btn btn-danger btn-block mb-4" style={{backgroundColor:"rgb(255, 119, 77)"}}>
+                    <button type="submit" onClick={()=>handleLogin()} className="btn btn-danger btn-block mb-4" style={{backgroundColor:"rgb(255, 119, 77)"}}>
                       Login
                     </button>
 

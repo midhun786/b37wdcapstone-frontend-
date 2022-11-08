@@ -121,7 +121,7 @@ function App() {
     console.log(item)
     value.splice(index,1);
     setValues([...cart]);
-    setTotal(total-item.price);
+    setTotal(()=>total-item.price);
   }
 }
   
