@@ -31,11 +31,7 @@ function Viewproduct({cart,handleToCart,isloading}) {
 
   let Loaduser=async()=>{
      try {
-        let user= await axios.get(`${env.api}/viewproduct/${params.id}`,{
-          headers:{
-            authorisation:window.localStorage.getItem("app-token")
-          }
-        })
+        let user= await axios.get(`${env.api}/viewproduct/${params.id}`)
         setUserData(user.data)
      } catch (error) {
         console.log(error)
