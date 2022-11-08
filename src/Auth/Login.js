@@ -39,7 +39,7 @@ function Login() {
       if(user.status===200){
         // user.data.token
         navigate("/home")
-        window.localStorage.setItem("app-token",user.data.token)
+        // window.localStorage.setItem("app-token",user.data.token)
         Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'welcome to home'});
       }
       else{
