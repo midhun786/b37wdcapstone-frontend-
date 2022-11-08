@@ -14,9 +14,9 @@ function Login() {
   // let handleforgot = () => {
   //   navigate("/forgotpassword")
   // }
-  // let handleLogin = () => {
-  //   navigate("/home")
-  // }
+  let handleLogin = () => {
+    navigate("/home")
+  }
    let formik = useFormik({
      initialValues:{
        email:"",
@@ -34,23 +34,22 @@ function Login() {
       return errors
   },
     onSubmit:async(values)=>{
-      try {
-      let user= await axios.post(`${env.api}/login`,values)
-      let hooker=user.data.hook
-      if(user.data.token){
-        // user.data.token
-        navigate("/home",{state:hooker})
-        window.localStorage.setItem("app-token",user.data.token)
-        Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'welcome to home'});
-      }
-      else{
-        alert("password/email is wrong")
-       }
-      } catch (error) {
-        console.log("errors")
-        Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: 'please sign up'});
-        // alert("user not found")
-      }
+      // try {
+      // let user= await axios.post(`${env.api}/login`,values)
+      // let hooker=user.data.hook
+      // if(user.data.token){
+      //   // user.data.token
+      //   navigate("/home",{state:hooker})
+      //   window.localStorage.setItem("app-token",user.data.token)
+      //   Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'welcome to home'});
+      // }else{
+      //   alert("password/email is wrong")
+      //  }
+      // } catch (error) {
+      //   console.log("errors")
+      //   Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: 'please sign up'});
+      //   // alert("user not found")
+      // }
     }
 
    })
@@ -108,7 +107,7 @@ function Login() {
                       </label>
                     </div>
                     {/* <!-- Submit button --> */}
-                    <button type="submit" className="btn btn-danger btn-block mb-4" style={{backgroundColor:"rgb(255, 119, 77)"}}>
+                    <button type="submit" onClick={()=>handleLogin()} className="btn btn-danger btn-block mb-4" style={{backgroundColor:"rgb(255, 119, 77)"}}>
                       Login
                     </button>
 
