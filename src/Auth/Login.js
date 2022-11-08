@@ -40,7 +40,7 @@ function Login() {
         // user.data.token
         navigate("/home")
         window.localStorage.setItem("app-token",user.data.token)
-        Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'Go to home'});
+        Swal.fire({ title: 'Welcome to Shopp.my', text: 'login successfull', icon: 'success', confirmButtonText: 'welcome to home'});
       }else{
         alert("password/email is wrong")
        }

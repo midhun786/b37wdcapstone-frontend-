@@ -77,6 +77,7 @@ function App() {
   },[]);
 
   let LoadData=async()=>{
+  try {
       setLoading(true);
       let req= await axios.get(`${env.api}/home`,{
         headers:{
@@ -85,6 +86,10 @@ function App() {
       })
       setData(req.data)
       setLoading(false)
+    } catch (error) {
+      console.log(error)
+    }
+      
   }
   const [cart,setCart] =useState(0);
   const[value,setValues]=useState([]);
