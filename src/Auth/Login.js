@@ -34,7 +34,7 @@ function Login() {
       return errors
   },
      onSubmit:async(values)=>{
-      try {
+    
       let user= await axios.post(`${env.api}/`,values)
       // if(user.status===200){
       //   // user.data.token
@@ -45,12 +45,13 @@ function Login() {
       // else{
       //   alert("password/email is wrong")
       //  }
-      } catch (error) {
-        console.log("errors")
-        Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: 'please sign up'});
-        // alert("user not found")
-      }
-    }
+      } 
+    //   catch (error) {
+    //     console.log("errors")
+    //     Swal.fire({ title: 'user not found', text: 'please try again', icon: 'warning', confirmButtonText: 'please sign up'});
+    //     // alert("user not found")
+    //   }
+    // }
 
    })
 
