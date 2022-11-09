@@ -3,7 +3,7 @@ import Navbar from '../Home/Navbar'
 import CartLoop from './CartLoop'
 import CartSummary from './CartSummary'
 
-function Cart({cart,value,total,handleToRemove,handleIncrement,handleDecrement,initialValues}) {
+function Cart({cart,value,setTotal,total,handleToRemove,handleIncrement,handleDecrement,initialValues}) {
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -20,6 +20,7 @@ function Cart({cart,value,total,handleToRemove,handleIncrement,handleDecrement,i
             key={ele._id}
             ele={ele}
             total={total} 
+            setTotal={setTotal}
             initialValues={initialValues} 
             handleToRemove={handleToRemove}
             handleIncre={handleIncrement} 

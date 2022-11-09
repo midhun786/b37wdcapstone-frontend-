@@ -2,17 +2,19 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function CartLoop({ele,handleToRemove,handleIncre,handleDecre,initialValues,index}) {
+function CartLoop({ele,total,setTotal,handleToRemove,handleIncre,handleDecre,index}) {
 
   const removeFromCart=(ele)=>{
     handleToRemove(ele)
   }
 
-  const handleIncrement=(index)=>{
-    handleIncre(index)
+  const handleIncrement=(ele,index)=>{
+    handleIncre(ele,index)
+    setTotal(total+ele.price)
   }
-  const handleDecrement=(index)=>{
-    handleDecre(index)
+  const handleDecrement=(ele,index)=>{
+    handleDecre(ele,index)
+    setTotal(total-ele.price)
   } 
 return (
   <>
@@ -48,8 +50,8 @@ return (
 
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                  <div className="d-flex mb-4" style={{maxWidth: "300px"}}>
-                  <button className="btn btn-primary px-3 me-2"
-                    onClick={()=>handleDecrement(index)}>
+                  <button disabled={ele.count==1?true:false} className="btn btn-primary px-3 me-2"
+                    onClick={()=>handleDecrement(ele,index)}>
                     <i className="fas fa-minus"></i>
                   </button>
 
@@ -58,7 +60,7 @@ return (
                   </div>
 
                   <button className="btn btn-primary px-3 ms-2"
-                   onClick={()=>handleIncrement(index)}>
+                   onClick={()=>handleIncrement(ele,index)}>
                     <i className="fas fa-plus"></i>
                   </button>
                 </div>

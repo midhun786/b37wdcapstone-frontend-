@@ -96,8 +96,8 @@ function App() {
   const[total,setTotal]=useState(0);
   // const [initialValues,setInitialValues]=useState(1)
 
-  const handleIncrement=(idx)=>{
-    console.log(idx)
+  const handleIncrement=(ele,idx)=>{
+    // console.log(idx)
     const incre=value.map((obj,index)=>{
       if(index==idx){
         const inc= {...obj,count:obj.count+1}
@@ -108,8 +108,8 @@ function App() {
      })
      setValues(incre)
     }
-  const handleDecrement=(idx)=>{
-    console.log(idx)
+  const handleDecrement=(ele,idx)=>{
+    // console.log(idx)
     const dec=value.map((obj,index)=>{
       if(index==idx){
         const dec= {...obj,count:obj.count-1}
@@ -151,7 +151,8 @@ function App() {
       <Route path="/cart" element={<Cart 
       value={value} 
       cart={cart}
-      total={total} 
+      total={total}
+      setTotal={setTotal} 
       // initialValues={initialValues}
       handleToRemove={removeFromCart} 
       handleIncrement={handleIncrement}
