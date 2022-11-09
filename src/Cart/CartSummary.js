@@ -12,7 +12,7 @@ function CartSummary({total}) {
         key: "rzp_test_cSjwpLQPPi0Uxz",
         key_secret:"0wVxMg5kGzT0eJyDdjR9FLdi",
         amount: total*100,
-        currency:"USD",
+        currency:"INR",
         name:"Shopp.my",
         description:"for testing purpose",
         handler: function(response){
