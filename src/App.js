@@ -147,7 +147,7 @@ function App() {
       <Route path="/register" element={<Register/>}/>
       <Route path="/Reset" element={<Forgot/>}/>
       <Route path='/Reset-Password/:id/:token' element={<Confirm/>}/>
-      <Route path="/products" element={<Products cart={cart} isloading={isloading} data={data} handleToCart={addToCart} />}/>
+      <Route path="/products" element={<Products cart={cart} isloading={isloading} value={value} data={data} handleToCart={addToCart} />}/>
       <Route path="/cart" element={<Cart 
       value={value} 
       cart={cart}
