@@ -5,7 +5,7 @@ import Card from '../Home/Card'
 import Navbar from '../Home/Navbar'
 import animationData from "./lottie/93948-wait-loading-animation.json"
 
-function Products({cart,data,isloading,handleToCart}) {
+function Products({cart,value,data,isloading,handleToCart}) {
   const defaultOptions = {
     loop: true,
     autoplay: true, 
@@ -27,8 +27,8 @@ function Products({cart,data,isloading,handleToCart}) {
                    isloading?<><Lottie options={defaultOptions}
                    height={400}
                    width={400}
-                   /></>:data.map((item)=>{
-                      return <Card item={item} handleToCart={handleToCart}></Card>
+                   /></>:data.map((item,index)=>{
+                      return <Card key={index} item={item} value={value} handleToCart={handleToCart}></Card>
                     })
                    }
                 </div>
