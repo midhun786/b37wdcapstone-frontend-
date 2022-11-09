@@ -105,7 +105,7 @@ function Login() {
                       </label>
                     </div>
                     {/* <!-- Submit button --> */}
-                    <button type="submit" onClick={()=>handleLogin()} className="btn btn-danger btn-block mb-4" style={{backgroundColor:"rgb(255, 119, 77)"}}>
+                    <button type="submit" className="btn btn-danger btn-block mb-4" style={{backgroundColor:"rgb(255, 119, 77)"}}>
                       Login
                     </button>
 
