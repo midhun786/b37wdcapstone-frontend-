@@ -14,8 +14,9 @@ function Cart({cart,value,total,handleToRemove,handleIncrement,handleDecrement,i
     <div className="row d-flex justify-content-center my-4">
       <div className="col-md-8">
         {
-          value.map((ele)=>{
+          value.map((ele,index)=>{
             return <CartLoop 
+            index={index}
             key={ele._id}
             ele={ele}
             total={total} 

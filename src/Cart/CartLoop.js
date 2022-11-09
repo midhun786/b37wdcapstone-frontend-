@@ -2,17 +2,17 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function CartLoop({ele,handleToRemove,handleIncre,handleDecre,initialValues}) {
+function CartLoop({ele,handleToRemove,handleIncre,handleDecre,initialValues,index}) {
 
-  let removeFromCart=(ele)=>{
+  const removeFromCart=(ele)=>{
     handleToRemove(ele)
   }
 
-  let handleIncrement=()=>{
-    handleIncre()
+  const handleIncrement=(index)=>{
+    handleIncre(index)
   }
-  let handleDecrement=()=>{
-    handleDecre()
+  const handleDecrement=(index)=>{
+    handleDecre(index)
   } 
 return (
   <>
@@ -49,21 +49,21 @@ return (
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                  <div className="d-flex mb-4" style={{maxWidth: "300px"}}>
                   <button className="btn btn-primary px-3 me-2"
-                    onClick={()=>handleDecrement()}>
+                    onClick={()=>handleDecrement(index)}>
                     <i className="fas fa-minus"></i>
                   </button>
 
                   <div className="form-outline fw-bold">
-                    <input id="form1" min="1" name="quantity" value={initialValues} type="number" className="form-control"  placeholder='quantity'/>
+                    <input id="form1" min="1" name="quantity" value={ele.count} type="number" className="form-control"  placeholder='quantity'/>
                   </div>
 
                   <button className="btn btn-primary px-3 ms-2"
-                   onClick={()=>handleIncrement()}>
+                   onClick={()=>handleIncrement(index)}>
                     <i className="fas fa-plus"></i>
                   </button>
                 </div>
              <p className="text-start text-md-center">
-                  <strong>${ele.price*initialValues}</strong>
+                  <strong>${ele.price*ele.count}</strong>
                 </p>
               </div>
             </div>

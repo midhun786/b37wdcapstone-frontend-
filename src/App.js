@@ -94,26 +94,40 @@ function App() {
   const [cart,setCart] =useState(0);
   const[value,setValues]=useState([]);
   const[total,setTotal]=useState(0);
-  const [initialValues,setInitialValues]=useState(1)
+  // const [initialValues,setInitialValues]=useState(1)
 
-  let handleIncrement=()=>{
-    if(initialValues!=0){
-    setInitialValues(initialValues+1)
+  const handleIncrement=(idx)=>{
+    console.log(idx)
+    const incre=value.map((obj,index)=>{
+      if(index==idx){
+        const inc= {...obj,count:obj.count+1}
+        return {...inc}
+      }else{
+        return {...obj}
+      }
+     })
+     setValues(incre)
     }
-  }
-  let handleDecrement=()=>{
-    if(initialValues>1){
-    setInitialValues(initialValues-1)
-    }
+  const handleDecrement=(idx)=>{
+    console.log(idx)
+    const dec=value.map((obj,index)=>{
+      if(index==idx){
+        const dec= {...obj,count:obj.count-1}
+        return {...dec}
+      }else{
+        return {...obj}
+      }
+     })
+     setValues(dec)
   }
   
-  let addToCart=(item)=>{
+  const addToCart=(item)=>{
     setCart(cart+1)
    Swal.fire({ title: 'Thank you', text: 'Added in cart', icon: 'success', confirmButtonText: "check cart"});
     setValues([...value,item])
     setTotal(total+item.price)
   }
-  let removeFromCart=(ele)=>{
+  const removeFromCart=(ele)=>{
     if(cart>0){
     alert("Are you sure want to remove item")
     setCart(cart-1)
@@ -138,7 +152,7 @@ function App() {
       value={value} 
       cart={cart}
       total={total} 
-      initialValues={initialValues}
+      // initialValues={initialValues}
       handleToRemove={removeFromCart} 
       handleIncrement={handleIncrement}
       handleDecrement={handleDecrement}/>}/>
