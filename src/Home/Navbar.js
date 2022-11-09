@@ -31,7 +31,7 @@ function Navbar({cart,username}) {
               <Link to={"/register"} className="nav-link">register</Link>
             </li>
             <li className="nav-item mx-3">
-              <Link to="##" className="nav-link"><span><u><strong><i className="fa-solid fa-user me-2"></i>{username}</strong></u></span></Link>
+              <Link to="" className="nav-link"><span><u><strong><i className="fa-solid fa-user me-2"></i>{username}</strong></u></span></Link>
             </li>
           </ul>
           <form className="d-flex">
