@@ -1,6 +1,6 @@
 import React from 'react'
 import razorpay from './images/razorpay-icon.png'
-
+import { KEY,SECRET } from './env';
 
 function CartSummary({total}) {
    
@@ -9,8 +9,8 @@ function CartSummary({total}) {
     alert("purchase any item, Cart is empty");
     }else{
       var options = {
-        key: process.env.KEY,
-        key_secret:process.env.SECRET,
+        key:{KEY},
+        key_secret:{SECRET},
         amount: total*100,
         currency:"INR",
         name:"Shopp.my",
