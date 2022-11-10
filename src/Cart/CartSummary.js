@@ -9,8 +9,8 @@ function CartSummary({total}) {
     alert("purchase any item, Cart is empty");
     }else{
       var options = {
-        key: process.env.KEY,
-        key_secret:process.env.SECRET,
+        key: "rzp_test_cSjwpLQPPi0Uxz",
+        key_secret:"0wVxMg5kGzT0eJyDdjR9FLdi",
         amount: total*100,
         currency:"INR",
         name:"Shopp.my",
