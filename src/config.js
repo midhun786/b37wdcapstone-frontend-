@@ -1,3 +1,3 @@
 export const env={
-     api:"https://b37wdcapstone.herokuapp.com"
+     api:"https://vercel.com/midhun786/b37wdcapstone-backend"
 }
