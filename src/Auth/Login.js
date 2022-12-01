@@ -67,6 +67,8 @@ function Login() {
               </h1>
               <p style={{ color: " hsl(217, 10%, 50.8%)" }}>
               Shopp.my was founded in the garage of Bezos' rented home in Bellevue, Washington. Bezos' parents invested almost $250,000 in the start-up. On July 16, 1995, Shopp.my opened as an online bookseller, selling the world's largest collection of books to anyone with World Wide Web access.
+              <br/><br/><br/><strong>User credential :midhunkumarengineer98@gmail.com</strong>
+              <br/><br/><strong>Password  :12345678</strong>
               </p>
             </div>
 
